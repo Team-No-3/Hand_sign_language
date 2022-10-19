@@ -36,18 +36,18 @@ https://public.roboflow.com/object-detection/american-sign-language-letters
 
 
 * <h2>Details</h2>
-* train image
+ * train image
 
 ![image](https://user-images.githubusercontent.com/115959569/196577505-89540068-244a-441e-b835-22a2c3ea24c4.png)
 
 
 
-* <h2>result</h2>
-* result data
+* <h2>Result</h2>
+ * result data
 
 ![image](https://user-images.githubusercontent.com/115959569/196579019-352f7c35-2fe7-4767-a7a4-78c10cfcfff1.png)
 
-* result video
+ * result video
 
 https://user-images.githubusercontent.com/115959569/196578260-53908e34-d1cd-4f80-a5ba-3c78a84a96b7.mp4
 
