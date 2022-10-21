@@ -47,11 +47,13 @@ https://public.roboflow.com/object-detection/american-sign-language-letters
 
 ![image](https://user-images.githubusercontent.com/115959569/196579019-352f7c35-2fe7-4767-a7a4-78c10cfcfff1.png)
 
- * result video
+ * Android result video
 
 https://user-images.githubusercontent.com/115959569/196578260-53908e34-d1cd-4f80-a5ba-3c78a84a96b7.mp4
-
-
+ 
+ * Web result video
+ 
+https://youtu.be/_majAsLQFXQ
 
 ## :pushpin: 참고
 
