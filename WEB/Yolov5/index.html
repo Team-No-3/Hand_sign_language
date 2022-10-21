@@ -1,0 +1,119 @@
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>WebRTC demo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Silkscreen&display=swap" rel="stylesheet">
+    <style>
+        button {
+            padding: 8px 16px;
+        }
+
+        pre {
+            overflow-x: hidden;
+            overflow-y: auto;
+        }
+
+        video {
+            width: 100%;
+        }
+
+        .option {
+            margin-bottom: 8px;
+        }
+
+        #media {
+            max-width: 1280px;
+        }
+    </style>
+</head>
+<header style="padding-top: 1rem; padding-bottom: 1rem; text-align: center; font-family: 'Silkscreen', cursive; background-color: darkgrey">
+    <div style="font-size: 4rem; color: white; text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;">Hand Sign Detector</div>
+</header>
+<body style="background-color: darkgrey">
+<div style="justify-content: center; flex-direction: column; width: 100%; display: flex; align-items: center;">
+    <h2>Options</h2>
+    <div style="align-items: start;">
+        <div class="option">
+            <input id="use-datachannel" checked="checked" type="checkbox"/>
+            <label for="use-datachannel">Use datachannel</label>
+            <select id="datachannel-parameters">
+                <option value='{"ordered": true}'>Ordered, reliable</option>
+                <option value='{"ordered": false, "maxRetransmits": 0}'>Unordered, no retransmissions</option>
+                <option value='{"ordered": false, "maxPacketLifetime": 500}'>Unordered, 500ms lifetime</option>
+            </select>
+        </div>
+        <div class="option">
+            <input id="use-audio" checked="checked" type="checkbox"/>
+            <label for="use-audio">Use audio</label>
+            <select id="audio-codec">
+                <option value="default" selected>Default codecs</option>
+                <option value="opus/48000/2">Opus</option>
+                <option value="PCMU/8000">PCMU</option>
+                <option value="PCMA/8000">PCMA</option>
+            </select>
+        </div>
+        <div class="option">
+            <input id="use-video" type="checkbox"/>
+            <label for="use-video">Use video</label>
+            <select id="video-resolution">
+                <option value="" selected>Default resolution</option>
+                <option value="320x240">320x240</option>
+                <option value="640x480">640x480</option>
+                <option value="960x540">960x540</option>
+                <option value="1280x720">1280x720</option>
+            </select>
+            <select id="video-transform">
+                <option value="none" selected>No transform</option>
+                <option value="edges">Edge detection</option>
+                <option value="cartoon">Cartoon effect</option>
+                <option value="rotate">Rotate</option>
+            </select>
+            <select id="video-codec">
+                <option value="default" selected>Default codecs</option>
+                <option value="VP8/90000">VP8</option>
+                <option value="H264/90000">H264</option>
+            </select>
+        </div>
+        <div class="option">
+            <input id="use-stun" type="checkbox"/>
+            <label for="use-stun">Use STUN server</label>
+        </div>
+    </div>
+    <button id="start" onclick="start()" style="width: 5rem;">Start</button>
+    <button id="stop" style="display: none" onclick="stop()" style="width: 5rem;">Stop</button>
+    <hr style="width: 100%; color: white; border-color: white;">
+    <h2>State</h2>
+    <p>
+        ICE gathering state: <span id="ice-gathering-state"></span>
+    </p>
+    <p>
+        ICE connection state: <span id="ice-connection-state"></span>
+    </p>
+    <p>
+        Signaling state: <span id="signaling-state"></span>
+    </p>
+
+    <div id="media" style="display: none; text-align: center; width: 50%;">
+        <h2 style="margin-top: 2rem;">Media</h2>
+
+        <audio id="audio" autoplay="true"></audio>
+        <video id="video" autoplay="true" playsinline="true" style="transform: scaleX(-1);"></video>
+    </div>
+    <hr style="width: 100%; color: white; border-color: white;">
+    <h2>Data channel</h2>
+    <pre id="data-channel" style="height: 10px;"></pre>
+    <hr style="width: 100%; color: white; border-color: white;">
+    <h2>SDP</h2>
+
+    <h3>Offer</h3>
+    <pre id="offer-sdp"></pre>
+
+    <h3>Answer</h3>
+    <pre id="answer-sdp"></pre>
+
+    <script src="client.js"></script>
+</div>
+</body>
+</html>
