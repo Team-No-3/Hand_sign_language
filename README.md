@@ -1,5 +1,5 @@
 ## 🖐️ Object_detecting_hand_sign_language ( YOLO v5, Android Studio )
-## [디지털스마트부산아카데미 1기] 수화 DataSet을 활용한 Detecting 어플 구현
+### [디지털스마트부산아카데미 1기] 수화 DataSet을 활용한 Detecting 어플 구현
 <br/>
 
 ***
